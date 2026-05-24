@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datalens-cli"
+version = "0.1.0"
+description = "A lightweight terminal JSON/YAML/TOML intelligent data processing engine"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "DataLens CLI Contributors"},
+]
+keywords = ["json", "yaml", "toml", "csv", "cli", "data-processing", "query", "diff"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Utilities",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=5.3"]
+toml = ["toml>=0.10"]
+
+[project.scripts]
+datalens = "datalens_cli.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["datalens_cli*"]
